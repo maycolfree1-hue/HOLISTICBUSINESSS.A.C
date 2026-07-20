@@ -7,10 +7,13 @@
     <!-- 🟢 CONFIGURACIÓN DEL FAVICON PERSONALIZADO -->
     <link rel="icon" type="image/png" href="nofavicon.png">
 
-    <!-- 🟢 ETIQUETAS SEO PARA GOOGLE (NOMBRE ACTUALIZADO Y RUC) -->
-    <title>HOLISTIC BUSINESS S.A.C. | RUC 20610388885 - Importación Textil y Ropa al por Mayor</title>
-    <meta name="description" content="Página oficial de HOLISTIC BUSINESS S.A.C. (RUC: 20610388885). Expertos con 3 años en el mercado peruano de importación directa de textiles, prendas y ropa de alta calidad.">
+    <!-- 🟢 SEO OPTIMIZADO (LÍMITES EXACTOS DE CARACTERES PARA GOOGLE) -->
+    <title>HOLISTIC BUSINESS S.A.C. | RUC 20610388885</title>
+    <meta name="description" content="Web oficial de HOLISTIC BUSINESS S.A.C. (RUC 20610388885). 3 años importando textiles, ropa urbana y prendas directas al por mayor en todo el Perú.">
     <meta name="keywords" content="Holistic Business SAC, RUC 20610388885, importación ropa, textiles Perú, mayorista ropa Lima">
+
+    <!-- 🟢 ENLACE CANONICAL (SOLUCIONA EL MENSAJE 'MISSING') -->
+    <link rel="canonical" href="https://maycolfree1-hue.github.io/HOLISTICBUSINESSS.A.C/" />
 
     <!-- 🟢 SCHEMA.ORG: CÓDIGO INVISIBLE PARA VERIFICACIÓN FISCAL DE GOOGLE -->
     <script type="application/ld+json">
@@ -19,6 +22,7 @@
       "@type": "Organization",
       "name": "HOLISTIC BUSINESS S.A.C.",
       "taxID": "20610388885",
+      "url": "https://maycolfree1-hue.github.io/HOLISTICBUSINESSS.A.C/",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Jr. Andahuaylas 755, 755 Jirón Andahuaylas",
@@ -29,7 +33,7 @@
     }
     </script>
 
-    <!-- 🟢 ESTILOS Y DISEÑO (CSS MODERNO Y ASIMÉTRICO) -->
+    <!-- 🟢 ESTILOS Y DISEÑO -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Syne:wght@700;800&display=swap');
 
@@ -37,7 +41,7 @@
             --bg-dark: #0a0a0a;
             --bg-card: #121212;
             --text-light: #f4f4f4;
-            --neon: #ccff00; /* Verde Neón moderno */
+            --neon: #ccff00;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -46,12 +50,49 @@
             font-family: 'Montserrat', sans-serif; 
             background-color: var(--bg-dark); 
             color: var(--text-light); 
+            scroll-behavior: smooth;
         }
 
         h1, h2, h3 { font-family: 'Syne', sans-serif; text-transform: uppercase; }
 
+        /* 🟢 MENÚ FLOTANTE ARRIBA DEL HERO (SIN FRANJA AFECTADA) */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 30px 10%;
+            z-index: 10;
+            background: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon);
+        }
+
         /* 🟢 HERO SECTION */
         .hero {
+            position: relative;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -68,7 +109,6 @@
         .hero h1 span { color: var(--neon); }
         .hero p { font-size: 1.2rem; max-width: 650px; margin-bottom: 40px; color: #e0e0e0; line-height: 1.6; }
 
-        /* 🟢 BOTONES INTERACTIVOS BRUTALISTAS */
         .btn-container { display: flex; gap: 20px; flex-wrap: wrap; }
         .btn {
             padding: 16px 32px;
@@ -95,7 +135,7 @@
         }
         .btn-outline:hover { background-color: var(--neon); color: #000; }
 
-        /* 🟢 SECCIÓN 3 AÑOS EN EL MERCADO */
+        /* 🟢 SECCIÓN NOSOTROS (MANIFESTO) */
         .manifesto {
             display: flex;
             align-items: center;
@@ -117,7 +157,6 @@
         .manifesto-text h2 { font-size: 2.8rem; margin-bottom: 20px; color: #fff; }
         .manifesto-text p { font-size: 1.15rem; line-height: 1.7; color: #b3b3b3; }
 
-        /* 🟢 SECCIÓN DE LÍNEAS DE IMPORTACIÓN DIRECTA (MÁS ROPA) */
         .categories { padding: 100px 10%; background-color: var(--bg-dark); }
         .categories h2 { font-size: 3rem; margin-bottom: 50px; border-bottom: 2px solid #222; padding-bottom: 15px; }
         
@@ -150,7 +189,6 @@
         .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #fff; letter-spacing: -0.5px; }
         .card p { color: #a0a0a0; line-height: 1.6; font-size: 0.95rem; }
 
-        /* 🟢 FOOTER Y CONTENEDOR DE MAPAS */
         .footer { padding: 80px 10%; background-color: #050505; text-align: center; border-top: 1px solid #111; }
         
         .seo-box {
@@ -200,7 +238,9 @@
         .waze-btn:hover { background-color: #00c3f5; transform: scale(1.03); box-shadow: 0 8px 25px rgba(42, 210, 255, 0.5); }
 
         @media(max-width: 768px) {
-            .hero h1 { font-size: 10vw; }
+            .navbar { justify-content: center; padding: 20px 5%; }
+            .nav-links { gap: 20px; }
+            .hero h1 { font-size: 10vw; margin-top: 60px; }
             .big-number { font-size: 8rem; text-align: center; }
             .manifesto { padding: 60px 5%; text-align: center; }
         }
@@ -208,18 +248,28 @@
 </head>
 <body>
 
-    <!-- CABECERA DE IMPACTO -->
-    <section class="hero">
+    <!-- NAV FLOTANTE TRANSPARENTE (ARRIBITA EN EL HERO) -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <!-- Enlace directo a WhatsApp configurado para abrir chat -->
+            <li><a href="https://wa.me/51900000000" target="_blank" style="color: var(--neon);">Háblanos</a></li>
+        </ul>
+    </nav>
+
+    <!-- CABECERA (INICIO) -->
+    <section class="hero" id="inicio">
         <h1>HOLISTIC BUSINESS S.A.C.<br><span>IMPORTACIÓN TEXTIL DE ALTO VOLUMEN.</span></h1>
         <p>Conectamos las tendencias globales con tu negocio. Importación directa de los mejores textiles, prendas urbanas y ropa lista para vestir a todo el Perú de manera ágil y masiva.</p>
         <div class="btn-container">
             <a href="#catalogo" class="btn btn-primary">Ver Líneas de Importación</a>
-            <a href="#contacto" class="btn btn-outline">Hablar con un asesor</a>
+            <a href="https://wa.me/51900000000" target="_blank" class="btn btn-outline">Hablar con un asesor</a>
         </div>
     </section>
 
-    <!-- MANIFIESTO Y EXPERIENCIA (3 AÑOS EN EL MERCADO) -->
-    <section class="manifesto">
+    <!-- SECCIÓN NOSOTROS -->
+    <section class="manifesto" id="nosotros">
         <div class="big-number">3</div>
         <div class="manifesto-text">
             <h2>Años Liderando el Mercado de Importación</h2>
@@ -227,12 +277,11 @@
         </div>
     </section>
 
-    <!-- LÍNEAS DE IMPORTACIÓN DIRECTA (MÁS VARIEDAD DE ROPA) -->
+    <!-- LÍNEAS DE IMPORTACIÓN DIRECTA -->
     <section class="categories" id="catalogo">
         <h2>Líneas de Importación Directa</h2>
         <div class="grid">
             
-            <!-- 1. Prendas Urbanas (Moda/Streetwear) -->
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80" alt="Importación de prendas de ropa listas" class="card-img">
                 <div class="card-content">
@@ -241,7 +290,6 @@
                 </div>
             </div>
 
-            <!-- 2. Línea Deportiva y Confección -->
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80" alt="Importación de ropa deportiva mayorista" class="card-img">
                 <div class="card-content">
@@ -250,7 +298,6 @@
                 </div>
             </div>
 
-            <!-- 3. Textiles en Rollo y Crudos -->
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=600&q=80" alt="Rollos de tela textiles importados" class="card-img">
                 <div class="card-content">
@@ -259,7 +306,6 @@
                 </div>
             </div>
 
-            <!-- 4. Tejidos de Punto y Plana -->
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1606744824163-985d376605aa?auto=format&fit=crop&w=600&q=80" alt="Tejidos y punto importación mayorista" class="card-img">
                 <div class="card-content">
@@ -268,7 +314,6 @@
                 </div>
             </div>
 
-            <!-- 5. Calzado y Colecciones de Moda -->
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Línea de calzado y zapatillas" class="card-img">
                 <div class="card-content">
@@ -277,7 +322,6 @@
                 </div>
             </div>
 
-            <!-- 6. Accesorios y Logística Cerrada -->
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Logística de contenedores textiles" class="card-img">
                 <div class="card-content">
@@ -289,14 +333,13 @@
         </div>
     </section>
 
-    <!-- FOOTER Y CONTENEDORES DE MAPAS ACTUALIZADOS -->
+    <!-- FOOTER Y MAPAS -->
     <footer class="footer" id="contacto">
         
         <div class="seo-box">
             <h2>Transparencia Corporativa e Información Fiscal</h2>
             <p>
                 Somos <strong>HOLISTIC BUSINESS S.A.C.</strong>, firma empresarial registrada formalmente en Perú con el <strong>RUC: 20610388885</strong>. Especializados exclusivamente en el rubro de importación mayorista de textiles y confecciones. Para gestiones comerciales, evaluación de muestras o recojo físico de cargamentos, visítanos presencialmente en: 
-                <!-- Dirección que enlaza directamente a Google Maps -->
                 <a class="maps-link" href="https://www.google.com/maps/place/755,+Jr.+Andahuaylas+755,+Lima+15033/@-12.0673662,-77.0281174,17z/data=!3m1!4b1!4m5!3m4!1s0x9105c896dcb24b5b:0x7debc1dcf5bdf256!8m2!3d-12.0673662!4d-77.0255425?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
                     Jr. Andahuaylas 755, 755 Jirón Andahuaylas, Lima, Provincia de Lima
                 </a>.
@@ -304,7 +347,6 @@
         </div>
 
         <div class="map-buttons-container">
-            <!-- Botón con la URL corregida de Waze -->
             <a href="https://waze.com/ul/h6mc5r5pts" target="_blank" class="waze-btn">
                 🚗 RUTA DE ACCESO EN WAZE
             </a>
