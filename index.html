@@ -187,18 +187,35 @@
         .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #fff; letter-spacing: -0.5px; }
         .card p { color: #a0a0a0; line-height: 1.6; font-size: 0.95rem; }
 
-        /* 🟢 CORREGIDO: SE QUITÓ LA CAPA OSCURA DE FONDO PARA QUE SE NOTEN LOS COLORES REALES DE holi.png */
+        /* 🟢 CONTENEDOR ANFITRIÓN DEL FOOTER PARA ASEGURAR COLORES REALES */
         .footer { 
+            position: relative;
             padding: 80px 10%; 
-            background-image: url('holi.png'); 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             text-align: center; 
             border-top: 1px solid #111; 
+            overflow: hidden;
+            background-color: transparent;
+        }
+
+        /* 🟢 RENDERIZADO AL 100% DE LA IMAGEN AUTÉNTICA SIN FILTROS */
+        .footer-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            pointer-events: none;
         }
         
-        /* 🟢 CAJA INTERIOR OSCURA COMPACTA SIN SOMBRAS PREDOMINANTES */
+        /* 🟢 CAPA INTERIOR CON CONTENIDO ENFRENTE DE LA IMAGEN */
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 🟢 CAJA INTERIOR OSCURA COMPACTA */
         .seo-box {
             background: rgba(18, 18, 18, 0.96);
             padding: 40px;
@@ -342,25 +359,30 @@
     <!-- FOOTER Y MAPAS -->
     <footer class="footer" id="contacto">
         
-        <div class="seo-box">
-            <h2>Transparencia Corporativa e Información Fiscal</h2>
-            <p>
-                Somos <strong>HOLISTIC BUSINESS S.A.C.</strong>, firma empresarial registrada formalmente en Perú con el <strong>RUC: 20610388885</strong>. Especializados exclusivamente en el rubro de importación mayorista de textiles y confecciones. Para gestiones comerciales, evaluación de muestras o recojo físico de cargamentos, visítanos presencialmente en: 
-                <a class="maps-link" href="https://www.google.com/maps/place/755,+Jr.+Andahuaylas+755,+Lima+15033/@-12.0673662,-77.0281174,17z/data=!3m1!4b1!4m5!3m4!1s0x9105c896dcb24b5b:0x7debc1dcf5bdf256!8m2!3d-12.0673662!4d-77.0255425?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                    Jr. Andahuaylas 755, 755 Jirón Andahuaylas, Lima, Provincia de Lima
-                </a>.
+        <!-- Imagen nativa colocada en la estructura HTML para máxima fidelidad de color -->
+        <img src="holi.png" alt="Fondo Corporativo" class="footer-bg-image">
+
+        <div class="footer-content">
+            <div class="seo-box">
+                <h2>Transparencia Corporativa e Información Fiscal</h2>
+                <p>
+                    Somos <strong>HOLISTIC BUSINESS S.A.C.</strong>, firma empresarial registrada formalmente en Perú con el <strong>RUC: 20610388885</strong>. Especializados exclusivamente en el rubro de importación mayorista de textiles y confecciones. Para gestiones comerciales, evaluación de muestras o recojo físico de cargamentos, visítanos presencialmente en: 
+                    <a class="maps-link" href="https://www.google.com/maps/place/755,+Jr.+Andahuaylas+755,+Lima+15033/@-12.0673662,-77.0281174,17z/data=!3m1!4b1!4m5!3m4!1s0x9105c896dcb24b5b:0x7debc1dcf5bdf256!8m2!3d-12.0673662!4d-77.0255425?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                        Jr. Andahuaylas 755, 755 Jirón Andahuaylas, Lima, Provincia de Lima
+                    </a>.
+                </p>
+            </div>
+
+            <div class="map-buttons-container">
+                <a href="https://waze.com/ul/h6mc5r5pts" target="_blank" class="waze-btn">
+                    🚗 RUTA DE ACCESO EN WAZE
+                </a>
+            </div>
+            
+            <p style="margin-top: 50px; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-size: 0.85rem; font-weight: bold;">
+                © 2026 HOLISTIC BUSINESS S.A.C. | RUC: 20610388885. Todos los derechos reservados.
             </p>
         </div>
-
-        <div class="map-buttons-container">
-            <a href="https://waze.com/ul/h6mc5r5pts" target="_blank" class="waze-btn">
-                🚗 RUTA DE ACCESO EN WAZE
-            </a>
-        </div>
-        
-        <p style="margin-top: 50px; color: #fff; text-shadow: 1px 1px 2px #000; font-size: 0.85rem;">
-            © 2026 HOLISTIC BUSINESS S.A.C. | RUC: 20610388885. Todos los derechos reservados.
-        </p>
     </footer>
 
 </body>
