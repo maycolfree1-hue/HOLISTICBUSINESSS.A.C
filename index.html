@@ -7,7 +7,7 @@
     <!-- 🟢 CONFIGURACIÓN DEL FAVICON PERSONALIZADO -->
     <link rel="icon" type="image/png" href="nofavicon.png">
 
-    <!-- 🟢 SEO OPTIMIZADO (LÍMITES EXACTOS DE CARACTERES PARA GOOGLE) -->
+    <!-- 🟢 SEO OPTIMIZADO -->
     <title>HOLISTIC BUSINESS S.A.C. | RUC 20610388885</title>
     <meta name="description" content="Web oficial de HOLISTIC BUSINESS S.A.C. (RUC 20610388885). 3 años importando textiles, ropa urbana y prendas directas al por mayor en todo el Perú.">
     <meta name="keywords" content="Holistic Business SAC, RUC 20610388885, importación ropa, textiles Perú, mayorista ropa Lima">
@@ -15,7 +15,7 @@
     <!-- 🟢 ENLACE CANONICAL -->
     <link rel="canonical" href="https://maycolfree1-hue.github.io/HOLISTICBUSINESSS.A.C/" />
 
-    <!-- 🟢 SCHEMA.ORG: CÓDIGO INVISIBLE PARA VERIFICACIÓN FISCAL DE GOOGLE -->
+    <!-- 🟢 SCHEMA.ORG: CÓDIGO INVISIBLE PARA VERIFICACIÓN FISCAL -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -55,7 +55,7 @@
 
         h1, h2, h3 { font-family: 'Syne', sans-serif; text-transform: uppercase; }
 
-        /* 🟢 MENÚ FLOTANTE ARRIBA DEL HERO */
+        /* 🟢 MENÚ FLOTANTE */
         .navbar {
             position: absolute;
             top: 0;
@@ -86,9 +86,7 @@
             transition: color 0.2s ease;
         }
 
-        .nav-links a:hover {
-            color: var(--neon);
-        }
+        .nav-links a:hover { color: var(--neon); }
 
         /* 🟢 HERO SECTION */
         .hero {
@@ -135,7 +133,7 @@
         }
         .btn-outline:hover { background-color: var(--neon); color: #000; }
 
-        /* 🟢 SECCIÓN NOSOTROS (MANIFESTO) */
+        /* 🟢 SECCIÓN NOSOTROS */
         .manifesto {
             display: flex;
             align-items: center;
@@ -189,10 +187,10 @@
         .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #fff; letter-spacing: -0.5px; }
         .card p { color: #a0a0a0; line-height: 1.6; font-size: 0.95rem; }
 
-        /* 🟢 AHORA LA IMAGEN DE FONDO "holi.png" OCUPA TODO ESTE BLOQUE */
+        /* 🟢 CORREGIDO: SE QUITÓ LA CAPA OSCURA DE FONDO PARA QUE SE NOTEN LOS COLORES REALES DE holi.png */
         .footer { 
             padding: 80px 10%; 
-            background: linear-gradient(rgba(5, 5, 5, 0.88), rgba(5, 5, 5, 0.92)), url('holi.png'); 
+            background-image: url('holi.png'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -200,15 +198,14 @@
             border-top: 1px solid #111; 
         }
         
-        /* 🟢 LA CAJA INTERIOR VUELVE A SER OSCURA CON FONDO SÓLIDO */
+        /* 🟢 CAJA INTERIOR OSCURA COMPACTA SIN SOMBRAS PREDOMINANTES */
         .seo-box {
-            background: rgba(18, 18, 18, 0.95);
+            background: rgba(18, 18, 18, 0.96);
             padding: 40px;
             border: 1px solid #222;
             text-align: left;
             margin-bottom: 50px;
             border-left: 4px solid var(--neon);
-            backdrop-filter: blur(5px);
         }
         .seo-box h2 { font-size: 1.6rem; margin-bottom: 15px; color: var(--neon); }
         .seo-box p { font-size: 1rem; color: #cccccc; line-height: 1.6; }
@@ -244,9 +241,8 @@
             border-radius: 4px;
             text-decoration: none;
             transition: 0.3s;
-            box-shadow: 0 5px 20px rgba(42, 210, 255, 0.3);
         }
-        .waze-btn:hover { background-color: #00c3f5; transform: scale(1.03); box-shadow: 0 8px 25px rgba(42, 210, 255, 0.5); }
+        .waze-btn:hover { background-color: #00c3f5; transform: scale(1.03); }
 
         @media(max-width: 768px) {
             .navbar { justify-content: center; padding: 20px 5%; }
@@ -343,7 +339,7 @@
         </div>
     </section>
 
-    <!-- FOOTER Y MAPAS (CONTENEDOR GLOBAL DE FONDO) -->
+    <!-- FOOTER Y MAPAS -->
     <footer class="footer" id="contacto">
         
         <div class="seo-box">
@@ -362,7 +358,7 @@
             </a>
         </div>
         
-        <p style="margin-top: 50px; color: #777; font-size: 0.85rem;">
+        <p style="margin-top: 50px; color: #fff; text-shadow: 1px 1px 2px #000; font-size: 0.85rem;">
             © 2026 HOLISTIC BUSINESS S.A.C. | RUC: 20610388885. Todos los derechos reservados.
         </p>
     </footer>
