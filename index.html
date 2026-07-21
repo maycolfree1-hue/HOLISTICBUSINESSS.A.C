@@ -86,11 +86,12 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: color 0.2s ease;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
         }
 
         .nav-links a:hover { color: var(--neon); }
 
-        /* 🟢 HERO SECTION (ACTUALIZADO) */
+        /* 🟢 HERO SECTION (SIN SOMBREADOS NI OSCURIDAD) */
         .hero {
             position: relative;
             height: 100vh;
@@ -98,33 +99,46 @@
             flex-direction: column;
             justify-content: center;
             padding: 0 10%;
-            /* Eliminada la imagen de fondo CSS antigua */
-            background: #000; /* Fondo negro base */
-            overflow: hidden; /* Asegura que la imagen no se desborde */
+            background-color: #000;
+            overflow: hidden;
         }
 
-        /* 🟢 NUEVA CLASE PARA LA IMAGEN HERO NATIVA (MODIFICADO) */
+        /* 🟢 IMAGEN HERO TOTALMENTE NÍTIDA Y EN ALTA VISIBILIDAD */
         .hero-bg-image {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Cubre todo el espacio sin deformarse */
-            z-index: 1; /* Detrás del contenido */
-            opacity: 0.6; /* Un poco de opacidad para mejorar lectura del texto */
-            pointer-events: none; /* No interfiere con clics */
+            object-fit: cover;
+            z-index: 1;
+            opacity: 1; /* Al 100% de brillo y color original sin filtros oscuros */
+            pointer-events: none;
         }
 
-        /* 🟢 CONTENIDO DENTRO DEL HERO (MODIFICADO) */
+        /* 🟢 CAPA PARA COLOCAR TEXTOS VISIBLES SOBRE LA IMAGEN LIMPIA */
         .hero-content {
             position: relative;
-            z-index: 2; /* Delante de la imagen */
+            z-index: 2;
         }
 
-        .hero h1 { font-size: 5vw; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        /* Agregado text-shadow para proteger la lectura de las letras blancas sobre fondo claro */
+        .hero h1 { 
+            font-size: 5vw; 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), -1px -1px 0px rgba(0,0,0,0.5);
+        }
         .hero h1 span { color: var(--neon); }
-        .hero p { font-size: 1.2rem; max-width: 650px; margin-bottom: 40px; color: #e0e0e0; line-height: 1.6; }
+        .hero p { 
+            font-size: 1.2rem; 
+            max-width: 650px; 
+            margin-bottom: 40px; 
+            color: #ffffff; 
+            line-height: 1.6;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+        }
 
         .btn-container { display: flex; gap: 20px; flex-wrap: wrap; }
         .btn {
@@ -146,20 +160,21 @@
         .btn-primary:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0px #fff; }
         
         .btn-outline {
-            background-color: transparent;
+            background-color: rgba(0, 0, 0, 0.4);
             color: var(--neon);
             border: 2px solid var(--neon);
+            backdrop-filter: blur(4px);
         }
         .btn-outline:hover { background-color: var(--neon); color: #000; }
 
-        /* 🟢 SECCIÓN NOSOTROS */
+        /* 🟢 SECCIÓN NOSOTROS EN FORMA DE REJILLA */
         .manifesto {
-            display: flex;
+            display: grid;
+            grid-template-columns: 0.8fr 2fr 2.2fr;
             align-items: center;
             padding: 120px 10%;
             background-color: #000;
-            gap: 60px;
-            flex-wrap: wrap;
+            gap: 40px;
         }
         .big-number {
             font-size: 12rem;
@@ -167,12 +182,29 @@
             color: transparent;
             -webkit-text-stroke: 3px var(--neon);
             line-height: 1;
-            flex: 1;
-            min-width: 200px;
+            text-align: center;
         }
-        .manifesto-text { flex: 2; min-width: 300px; }
-        .manifesto-text h2 { font-size: 2.8rem; margin-bottom: 20px; color: #fff; }
-        .manifesto-text p { font-size: 1.15rem; line-height: 1.7; color: #b3b3b3; }
+        .manifesto-text h2 { font-size: 2.5rem; margin-bottom: 20px; color: #fff; }
+        .manifesto-text p { font-size: 1.1rem; line-height: 1.7; color: #b3b3b3; }
+
+        /* Contenedor para holi1 y holi2 */
+        .manifesto-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .manifesto-images img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #222;
+            transition: transform 0.3s ease;
+        }
+        .manifesto-images img:hover {
+            transform: scale(1.03);
+            border-color: var(--neon);
+        }
 
         .categories { padding: 100px 10%; background-color: var(--bg-dark); }
         .categories h2 { font-size: 3rem; margin-bottom: 50px; border-bottom: 2px solid #222; padding-bottom: 15px; }
@@ -206,7 +238,7 @@
         .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #fff; letter-spacing: -0.5px; }
         .card p { color: #a0a0a0; line-height: 1.6; font-size: 0.95rem; }
 
-        /* 🟢 CONTENEDOR ANFITRIÓN DEL FOOTER PARA ASEGURAR COLORES REALES */
+        /* 🟢 CONTENEDOR ANFITRIÓN DEL FOOTER */
         .footer { 
             position: relative;
             padding: 80px 10%; 
@@ -216,7 +248,6 @@
             background-color: transparent;
         }
 
-        /* 🟢 RENDERIZADO AL 100% DE LA IMAGEN AUTÉNTICA SIN FILTROS */
         .footer-bg-image {
             position: absolute;
             top: 0;
@@ -228,13 +259,11 @@
             pointer-events: none;
         }
         
-        /* 🟢 CAPA INTERIOR CON CONTENIDO ENFRENTE DE LA IMAGEN */
         .footer-content {
             position: relative;
             z-index: 2;
         }
 
-        /* 🟢 CAJA INTERIOR OSCURA COMPACTA */
         .seo-box {
             background: rgba(18, 18, 18, 0.96);
             padding: 40px;
@@ -280,12 +309,18 @@
         }
         .waze-btn:hover { background-color: #00c3f5; transform: scale(1.03); }
 
-        @media(max-width: 768px) {
+        /* Adaptabilidad en pantallas medianas y celulares */
+        @media(max-width: 992px) {
             .navbar { justify-content: center; padding: 20px 5%; }
             .nav-links { gap: 20px; }
-            .hero h1 { font-size: 10vw; margin-top: 60px; }
-            .big-number { font-size: 8rem; text-align: center; }
-            .manifesto { padding: 60px 5%; text-align: center; }
+            .hero h1 { font-size: 9vw; margin-top: 40px; }
+            .manifesto { 
+                grid-template-columns: 1fr; 
+                text-align: center;
+                padding: 60px 5%;
+            }
+            .big-number { font-size: 8rem; }
+            .manifesto-images img { height: 300px; }
         }
     </style>
 </head>
@@ -300,13 +335,11 @@
         </ul>
     </nav>
 
-    <!-- CABECERA (INICIO) (ACTUALIZADO) -->
+    <!-- CABECERA (INICIO) -->
     <section class="hero" id="inicio">
-        
-        <!-- 🟢 IMAGEN NATIVA COLOCADA AQUÍ PARA GITHUB -->
-        <img src="heroholi.png" alt="Fondo Corporativo de Importación" class="hero-bg-image">
+        <!-- Imagen de fondo real nítida sin filtros oscuros -->
+        <img src="heroholi.png" alt="Fondo Corporativo Holistic" class="hero-bg-image">
 
-        <!-- Contenedor para el texto para separarlo de la imagen de fondo -->
         <div class="hero-content">
             <h1>HOLISTIC BUSINESS S.A.C.<br><span>IMPORTACIÓN TEXTIL DE ALTO VOLUMEN.</span></h1>
             <p>Conectamos las tendencias globales con tu negocio. Importación directa de los mejores textiles, prendas urbanas y ropa lista para vestir a todo el Perú de manera ágil y masiva.</p>
@@ -317,12 +350,18 @@
         </div>
     </section>
 
-    <!-- SECCIÓN NOSOTROS -->
+    <!-- SECCIÓN NOSOTROS CON IMÁGENES AL COSTADO -->
     <section class="manifesto" id="nosotros">
         <div class="big-number">3</div>
+        
         <div class="manifesto-text">
             <h2>Años Liderando el Mercado de Importación</h2>
             <p>En <strong>HOLISTIC BUSINESS S.A.C.</strong> llevamos 3 años transformando radicalmente la forma en que las marcas y tiendas del Perú se abastecen de ropa y textiles. Traemos volumen industrial, calidad certificada sin intermediarios y las tendencias que el mercado exige, directo desde fábricas globales hasta nuestras instalaciones en Lima.</p>
+        </div>
+
+        <div class="manifesto-images">
+            <img src="holi1.jpeg" alt="Descarga de contenedor en Holistic Business">
+            <img src="holi2.jpeg" alt="Almacenamiento de stock Holistic Business">
         </div>
     </section>
 
@@ -384,8 +423,6 @@
 
     <!-- FOOTER Y MAPAS -->
     <footer class="footer" id="contacto">
-        
-        <!-- Imagen nativa colocada en la estructura HTML para máxima fidelidad de color -->
         <img src="holi.png" alt="Fondo Corporativo" class="footer-bg-image">
 
         <div class="footer-content">
